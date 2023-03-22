@@ -12,13 +12,11 @@ import java.io.IOException
 class MainActivity : AppCompatActivity() {
 
     // Declare the API endpoint and API key
-    private val endpoint = "https://api.openai.com/v1/engines/davinci-codex/completions"
-    private val apiKey = "YOUR_API_KEY"
-
+    private val endpoint = "https://api.openai.com/v1/engine/gpt3.5/completions"
+    private val apiKey = "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"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
         // Create an OkHttpClient instance
         val client = OkHttpClient()
 
@@ -38,7 +36,7 @@ class MainActivity : AppCompatActivity() {
         val request = Request.Builder()
             .url(endpoint)
             .header("Content-Type", "application/json")
-            .header("Authorization", "Bearer $apiKey")
+            .header("Authorization", "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")
             .post(requestBody)
             .build()
 
